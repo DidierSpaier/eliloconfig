@@ -10,7 +10,7 @@ The boot menu can be displayed either as a boot entry of the EFI firmware, or ru
 
 As is, this script targets the upcoming Slint distribution, but after an easy adaptation (see below) it is usable on any distribution based on Slackware and on Slackware itself.
 
-To adapt this version of eliloconfig to another distribution, just run the script rebrand.sh. You will be asked the name of your distribution, then will get the /tmp/elilo-<distribution> source directory. Run /tmp/elilo-<distribution>/eliloconfig.SlackBuild to build your re-branded liloconfig package.
+To adapt this version of eliloconfig to another distribution, just run the script rebrand.sh. You will be asked the name of your distribution, then will get the /tmp/elilo-[distribution] source directory. Run /tmp/elilo-[distribution]/eliloconfig.SlackBuild to build your re-branded liloconfig package.
 
 Slackware® is a registered trademark of Slackware Linux, Inc.
 

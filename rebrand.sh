@@ -42,7 +42,7 @@ mkdir /tmp/elilo-$TARGET
 cp -a elilo/* /tmp/elilo-$TARGET
 cd elilo
 OLDTARGET=$(<TARGET)
-sed "s/$OLDTARGET/$TARGET/" eliloconfig > /tmp/elilo-$TARGET/eliloconfig
+sed "s/$OLDTARGET/$TARGET/g" eliloconfig > /tmp/elilo-$TARGET/eliloconfig
 oldlength=${#OLDTARGET}
 newlength=${#TARGET}
 unset mystring

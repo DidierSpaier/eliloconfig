@@ -33,16 +33,16 @@ if [ $(echo $TARGET|wc -c) -lt 4 ] || [ $(echo $TARGET|wc -c) -gt 12 ]; then
   printf %b "The name should have between 3 and 12 characters. Please try again.\n"
   exit
 fi
-if [ -d /tmp/elilo ]; then
-  printf %b "Please (re)move the directory /tmp/elilo then try again.\n"
+if [ -d /tmp/elilo-$TARGET ]; then
+  printf %b "Please (re)move the directory /tmp/elilo-$TARGET then try again.\n"
   exit
 fi
-mkdir /tmp/elilo
+mkdir /tmp/elilo-$TARGET
 
-cp -a elilo/* /tmp/elilo
+cp -a elilo/* /tmp/elilo-$TARGET
 cd elilo
 OLDTARGET=$(<TARGET)
-sed "s/$OLDTARGET/$TARGET/" eliloconfig > /tmp/elilo/eliloconfig
+sed "s/$OLDTARGET/$TARGET/" eliloconfig > /tmp/elilo-$TARGET/eliloconfig
 oldlength=${#OLDTARGET}
 newlength=${#TARGET}
 unset mystring
@@ -53,7 +53,7 @@ if [ $oldlength -lt $newlength ]; then
     mydiff=$(($mydiff-1))
   done
   sed "/$OLDTARGET/s@$OLDTARGET/elilo.conf$mystring@$TARGET/elilo.conf@" \
-  customization.msg > /tmp/elilo/customization.msg
+  customization.msg > /tmp/elilo-$TARGET/customization.msg
 else
   mydiff=$(($oldlength-$newlength))
   while [ $mydiff -gt 0 ]; do
@@ -61,8 +61,8 @@ else
     mydiff=$(($mydiff-1))
   done
   sed "/$OLDTARGET/s@$OLDTARGET/elilo.conf@$TARGET/elilo.conf$mystring@" \
-  customization.msg > /tmp/elilo/customization.msg
+  customization.msg > /tmp/elilo-$TARGET/customization.msg
 fi
-printf $TARGET > /tmp/elilo/TARGET 
+printf $TARGET > /tmp/elilo-$TARGET/TARGET 
 cd $CWD
-printf %b "Done. the new source directory is /tmp/elilo.\n"
+printf %b "Done. the new source directory is /tmp/elilo-$TARGET.\n"

@@ -52,7 +52,7 @@ else
 fi
 
 rm -rf $PKG
-mkdir -p $TMP $PKG $OUTPUT
+mkdir -p $TMP $PKG
 cd $TMP
 rm -rf elilo
 mkdir elilo

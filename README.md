@@ -12,6 +12,10 @@ As is, this script targets the upcoming Slint distribution, but after an easy ad
 
 To adapt this version of eliloconfig to another distribution, just run the script rebrand.sh. You will be asked the name of your distribution, then will get the /tmp/elilo-[distribution] source directory. Run /tmp/elilo-[distribution]/eliloconfig.SlackBuild to build your re-branded liloconfig package.
 
+By default, the script eliloconfig.SlackBuild installs translations of messages output of eliloconfig, with an UTF-8 encoding. If this is not wished, just remove the "po" directory or the file SeTlocales from /tmp/elilo-[distribution] before running it.
+
 Slackware® is a registered trademark of Slackware Linux, Inc.
 
-Didier Spaier, Paris, 28/03/2016. 
+Didier Spaier, Paris, 28/03/2016.
+
+Last updated 29/03/2016.

@@ -1,0 +1,24 @@
+# The goal of this script is to centralize all locale settings, to ease
+# maintenance in cases like adding a new locale or change settings for
+# some locale
+# Didier Spaier 2013 sqq.
+SeTLocaleDir () {
+  case $ll_TT in
+    de_DE) LocaleDir=de;;
+    en_US) LocaleDir=en_US;;
+    el_GR) LocaleDir=el;;
+    es_CR) LocaleDir=es;;
+    fr_FR) LocaleDir=fr;;
+    it_IT) LocaleDir=it;;
+    nb_NO) LocaleDir=nb;;
+    nl_NL) LocaleDir=nl;;
+    pl_PL) LocaleDir=pl;;
+    pt_BR) LocaleDir=pt_BR;;
+    pt_PT) LocaleDir=pt_PT;;
+    ru_RU) LocaleDir=ru;;
+    sv_SE) LocaleDir=sv;;
+    tr_TR) LocaleDir=tr;;
+    uk_UA) LocaleDir=uk;;
+    *) LocaleDir=missing;;
+  esac
+}

@@ -16,9 +16,9 @@
  7f³70  A word of caution: there is no simple way to test your changes and a      ³10
  7f³70  small mistake could render the boot menu unusable. To avoid that, always  ³10
  7f³70  keep at least one existing image section as is and duplicate if need be   ³10
- 7f³70  even to modify it sligthly (just change the label). Then, check that you  ³10
+ 7f³70  even to modify it sligthly - but change the label! Then, check that you   ³10
  7f³70  can boot all new images sections before removing obsolete ones.           ³10
- 7f³70  Also, only add, remove or changes Images sections unless you reaally know ³10
+ 7f³70  Also, only add, remove or changes Images sections unless you really know  ³10
  7f³70  what you are doing.                                                       ³10
  7f³70                                                                            ³10
  7f³70                                                                            ³10

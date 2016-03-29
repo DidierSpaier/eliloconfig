@@ -43,6 +43,9 @@ cp -a elilo/* /tmp/elilo-$TARGET
 cd elilo
 OLDTARGET=$(<TARGET)
 sed "s/$OLDTARGET/$TARGET/g" eliloconfig > /tmp/elilo-$TARGET/eliloconfig
+for i in  $(ls po); do
+  sed "s/$OLDTARGET/$TARGET/g" po/$i >  /tmp/elilo-$TARGET/po/$i 
+done
 oldlength=${#OLDTARGET}
 newlength=${#TARGET}
 unset mystring

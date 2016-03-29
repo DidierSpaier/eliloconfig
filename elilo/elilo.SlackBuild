@@ -25,6 +25,7 @@ PKGNAM=elilo
 VERSION=${VERSION:-$(echo $PKGNAM*.tar.?z* | rev | cut -f 2 -d - | rev)}
 BUILD=${BUILD:-1}
 
+
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -36,6 +37,9 @@ fi
 CWD=$(pwd)
 TMP=${TMP:-/tmp}
 PKG=$TMP/package-$PKGNAM
+
+# To know in what directory install the .mo files case occuring - Didier
+
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -112,6 +116,26 @@ cp -a elilo*x86_64.efi $PKG/boot/elilo-x86_64.efi
 
 # Install in /boot the text files needed by the bootloader - Didier
 cp $CWD/{customization.msg,help.msg,message.msg} $PKG/boot
+
+# Compile and install the translations that we have - Didier
+if [ -d $CWD/po ] && [ -n "$(find $CWD/po -name "*po")" ] && [ -f $CWD/SeTlocales ]; then
+  . $CWD/SeTlocales
+  for j in $(find $CWD/po -name "*.po"); do
+    i=$(basename $j)
+    ll_TT=${i%%.*}
+    SeTLocaleDir
+    if [ "$LocaleDir" = "missing" ]; then
+      printf %b "I don't know where to install the message catalog for ${ll_TT}.\n"
+      printf %b "Please request that the file $CWD/SeTlocales be completed\n"
+      exit
+    fi
+    MO_DIR=$PKG/usr/share/locale/$LocaleDir/LC_MESSAGES
+    mkdir -p $MO_DIR
+    msgfmt --strict -c -v --statistics -o $MO_DIR/eliloconfig.mo $j
+    chown root:root $MO_DIR/eliloconfig.mo
+    chmod 644 $MO_DIR/eliloconfig.mo
+  done
+fi
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc

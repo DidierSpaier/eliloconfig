@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slint 20160329\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-29 11:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+#
+#. This file allows localizing content of
+#. displayed by 'pkgtool' in a dialog box for each installation script
+#. when the user wants to run some of these scripts again.
+# File: 32-blurbs, line: 4
+msgid "Set up ELILO (EFI LILO) to boot Linux from your hard drive"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 74
+msgid "ERROR:  System is not running under UEFI."
+msgstr ""
+#
+# File: 32-eliloconfig, line: 84
+msgid "ERROR:  No EFI System Partition mounted on /boot/efi."
+msgstr ""
+#
+# File: 32-eliloconfig, line: 103
+msgid "ERROR:  No kernel found at /boot/vmlinuz."
+msgstr ""
+#
+# File: 32-eliloconfig, line: 109
+msgid "INSTALL ELILO"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 110
+# File: 32-eliloconfig, line: 158
+# File: 32-eliloconfig, line: 193
+# File: 32-eliloconfig, line: 217
+msgid "ELILO (EFI Linux Loader) installation"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 111
+msgid ""
+"ELILO is a Linux boot loader for EFI based systems.  Installing ELILO will "
+"allow you to boot your Linux system from the hard drive after selecting it "
+"from the UEFI boot menu.  Since an EFI System Partition was detected on this "
+"machine, it is recommended that you install ELILO now.  Please select an "
+"option:"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 117
+msgid "Install ELILO on the EFI System Partition"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 118
+msgid "Do not install ELILO"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 157
+msgid "INSTALL BOOT MENU ENTRY?"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 159
+msgid ""
+"Would you like to install a boot menu entry so that you can easily select "
+"Slint when you boot your machine?  WARNING:  DO NOT install a boot menu "
+"entry on Apple hardware.  Apple computers use a different type of EFI "
+"firmware, and efibootmgr has been known to damage them.  On all other "
+"computers, it is recommended to add a boot menu entry.  Please select an "
+"option:"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 166
+msgid "Install a boot menu entry"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 167
+msgid "Do not install a boot menu entry"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 192
+msgid "REMOVE OLD Slint EFI BOOT ENTRY?"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 194
+#, sh-format
+msgid ""
+"An old Slint boot entry has been found in your EFI boot menu. Would you like "
+"to remove this before installing the new Slint boot entry?  This is "
+"recommended.\n"
+"\n"
+"Old EFI boot menu entry:\n"
+"$ENTRY"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 216
+msgid "EFI BOOT ENTRY INSTALLED"
+msgstr ""
+#
+# File: 32-eliloconfig, line: 218
+#, sh-format
+msgid ""
+"A Slint boot entry has been installed to your EFI boot\n"
+"menu.\n"
+"\n"
+"EFI boot menu entry:\n"
+"$ENTRY"
+msgstr ""

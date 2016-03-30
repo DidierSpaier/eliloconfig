@@ -10,7 +10,7 @@ The boot menu can be displayed either as a boot entry of the EFI firmware, or ru
 
 As is, this script targets the upcoming Slint distribution, but after an easy adaptation (see below) it is usable on any distribution based on Slackware and on Slackware itself.
 
-To adapt this version of eliloconfig to another distribution, just run the script rebrand.sh. You will be asked the name of your distribution, then will get the /tmp/elilo-[distribution] source directory. Run /tmp/elilo-[distribution]/eliloconfig.SlackBuild to build your re-branded liloconfig package.
+To adapt this version of eliloconfig to another distribution, just run the script rebrand.sh. You will be asked the name of your distribution, then will get the /tmp/elilo-[distribution] source directory. Download the file elilo-3.16-all.tar.gz from https://sourceforge.net/projects/elilo/files/elilo/elilo-3.16/ in /tmp/elilo-[distribution], then run /tmp/elilo-[distribution]/eliloconfig.SlackBuild to build your re-branded liloconfig package.
 
 By default, the script eliloconfig.SlackBuild installs translations of messages output of eliloconfig, with an UTF-8 encoding. If this is not wished, just remove the "po" directory or the file SeTlocales from /tmp/elilo-[distribution] before running it.
 

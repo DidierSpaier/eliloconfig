@@ -49,20 +49,16 @@ done
 oldlength=${#OLDTARGET}
 newlength=${#TARGET}
 unset mystring
-if [ $oldlength -lt $newlength ]; then
-  mydiff=$(($newlength-$oldlength))
-  while [ $mydiff -gt 0 ]; do
-    mystring="$mystring "
-    mydiff=$(($mydiff-1))
-  done
+diff=$(($newlength-$oldlength))
+absdiff=$((${diff#-}))
+while [ $absdiff -gt 0 ]; do
+  mystring="${mystring} "
+  absdiff=$(($absdiff-1))
+done
+if [ $diff -gt 0 ]; then
   sed "/$OLDTARGET/s@$OLDTARGET/elilo.conf$mystring@$TARGET/elilo.conf@" \
   customization.msg > /tmp/elilo-$TARGET/customization.msg
 else
-  mydiff=$(($oldlength-$newlength))
-  while [ $mydiff -gt 0 ]; do
-    mystring="$mystring "
-    mydiff=$(($mydiff-1))
-  done
   sed "/$OLDTARGET/s@$OLDTARGET/elilo.conf@$TARGET/elilo.conf$mystring@" \
   customization.msg > /tmp/elilo-$TARGET/customization.msg
 fi
